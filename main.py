@@ -6,8 +6,11 @@
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+import sklearn
 
 print(tf.__version__)
+
+
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
