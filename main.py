@@ -10,7 +10,21 @@ import sklearn
 
 print(tf.__version__)
 
-# --------- Initialize ANN ---------------------
+
+# 1. --------- Data preprocessing --------------
+
+dataset = pd.read_csv('/Users/mandeepsingh/Pycharmprojects/pythonproject/Churn_Modelling.csv')
+
+# Get data set into the variables
+x = dataset.iloc[:, 3:-1].values
+y = dataset.iloc[:, -1].values
+
+print(x)
+print(y)
+
+
+
+# 2. --------- Initialize ANN ---------------------
 
 # Initialize Ann
 # Sequential class object - as a sequence of layers
@@ -38,4 +52,5 @@ ann.add(tf.keras.layers.Dense(units = 1, activation= 'sigmoid'))
 ann.compile(optimizer= 'adam', loss= 'binary_crossentropy', metrics= ['accuracy'])
 
 # train
-
+# Classic value typically choosen in 32
+#ann.fit(x_train, y_train, batch_size= 32, epochs= 100)
