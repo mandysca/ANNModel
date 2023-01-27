@@ -10,13 +10,32 @@ import sklearn
 
 print(tf.__version__)
 
+# --------- Initialize ANN ---------------------
+
 # Initialize Ann
 # Sequential class object - as a sequence of layers
 
-ann = tf.keras.models.Sequential();
+ann = tf.keras.models.Sequential()
 
 # Adding the input layer and the first hidden layer
 # fully connected layer object of class dense
-# Input neurons in units as argument
+# Input neurons in units as argument as number of neurons in the layer
+# and activation argument
 
-ann.add(tf.keras.layers.Dense(6))
+ann.add(tf.keras.layers.Dense(units = 6, activation= 'relu'))
+
+# Add a second hidden layer
+
+ann.add(tf.keras.layers.Dense(units = 6, activation= 'relu'))
+
+# add an output layer, that has one neuron
+
+ann.add(tf.keras.layers.Dense(units = 1, activation= 'sigmoid'))
+
+# --------- Training ANN ---------------------
+
+# Compile
+ann.compile(optimizer= 'adam', loss= 'binary_crossentropy', metrics= ['accuracy'])
+
+# train
+
