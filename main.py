@@ -88,4 +88,5 @@ ann.compile(optimizer= 'adam', loss= 'binary_crossentropy', metrics= ['accuracy'
 
 # train
 # Classic value typically choosen in 32
-#ann.fit(x_train, y_train, batch_size= 32, epochs= 100)
+ann.fit(x_train, y_train, batch_size= 32, epochs= 100)
+
